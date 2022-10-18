@@ -6,6 +6,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using PlateformService.Data;
 using PlateformService.Dtos;
+using PlateformService.Models;
 
 namespace PlateformService.Controllers
 {
@@ -28,6 +29,26 @@ namespace PlateformService.Controllers
             var res =_plateformRepo.GetAllPlateforms();
             Console.WriteLine(res.Count());
             return Ok(_mapper.Map<IEnumerable<PlateformReadDtos>>(res)) ;
+        }
+        [HttpGet("{id}", Name="GetPlateformById")]
+        public ActionResult<PlateformReadDtos> GetPlateformById(int id)
+        {
+            var res =_plateformRepo.GetAllPlateformById(id);
+            if(res is not null)
+            return Ok(_mapper.Map<PlateformReadDtos>(res)) ;
+            
+            return NotFound();
+        }
+        [HttpPost]
+        public ActionResult<PlateformReadDtos> CreatePlateform(PlateformCreateDtos plateformCreateDtos)
+        {
+            var res =_mapper.Map<Plateform>(plateformCreateDtos);
+             _plateformRepo.createPlatefrom(res);
+            _plateformRepo.SaveChanges();
+            var returnObj= _mapper.Map<PlateformReadDtos>(res);
+            Console.WriteLine(res.Id);
+            return CreatedAtRoute(nameof(GetPlateformById),new {id=res.Id},returnObj) ;
+           
         }
     }
 

@@ -14,7 +14,7 @@ namespace PlateformService.Profiles
         {
             // sourse -> target 
             CreateMap<Plateform,PlateformReadDtos>().ReverseMap();
-            CreateMap<Plateform,PlateformCreateDtos>();
+            CreateMap<Plateform,PlateformCreateDtos>().ReverseMap();
 
         }
     }
