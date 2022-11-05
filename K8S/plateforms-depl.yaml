@@ -1,0 +1,30 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: plateforms-depl
+spec:
+  replicas : 1
+  selector:
+    matchLabels:
+      app: plateformservice
+  template:
+    metadata:
+      labels:
+        app: plateformservice
+    spec:
+      containers:
+      - name: plateformservice
+        image: mohzobeidah/plateformservice:latest
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        # ports:
+        # - containerPort: <Port>
+
+
+        #kubectl version
+        #kubectl apply -f .\plateforms-depl.yaml
+        #kubectl get  deployments
+        #kubectl get pods  
+        #kubectl delete deployments plateforms-depl

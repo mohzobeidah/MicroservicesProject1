@@ -2958,11 +2958,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Administrator\\Desktop\\Microservice1\\PlateformService\\PlateformService.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Microservice1\\PlateformService\\PlateformService.csproj",
       "projectName": "PlateformService",
-      "projectPath": "c:\\Users\\Administrator\\Desktop\\Microservice1\\PlateformService\\PlateformService.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\Microservice1\\PlateformService\\PlateformService.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Administrator\\Desktop\\Microservice1\\PlateformService\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\Microservice1\\PlateformService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3040,7 +3040,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
