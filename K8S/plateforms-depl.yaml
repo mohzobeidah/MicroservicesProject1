@@ -25,5 +25,5 @@ spec:
         #kubectl get  deployments
         #kubectl get pods  
         #kubectl delete deployments plateforms-depl
-        #kubectl rollout restart deployments plateforms-depl
+        #kubectl rollout restart deployment plateforms-depl
 
