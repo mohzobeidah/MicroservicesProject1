@@ -6,7 +6,7 @@ spec:
   replicas : 1
   selector:
     matchLabels:
-      app: plateformservice
+      app : plateformservice
   template:
     metadata:
       labels:
@@ -15,12 +15,9 @@ spec:
       containers:
       - name: plateformservice
         image: mohzobeidah/plateformservice:latest
-        # resources:
-        #   limits:
-        #     memory: "128Mi"
-        #     cpu: "500m"
-        # ports:
-        # - containerPort: <Port>
+
+
+
 
 
         #kubectl version
@@ -28,3 +25,4 @@ spec:
         #kubectl get  deployments
         #kubectl get pods  
         #kubectl delete deployments plateforms-depl
+

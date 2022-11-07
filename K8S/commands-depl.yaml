@@ -1,0 +1,28 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: commands-depl
+spec:
+  replicas : 1
+  selector:
+    Labels:
+      app: commandservice
+  template:
+    metadata:
+      labels:
+        app: commandservice
+    spec:
+      containers:
+      - name: commandservice
+        image: mohzobeidah/commandservice:latest
+
+
+
+
+
+        #kubectl version
+        #kubectl apply -f .\plateforms-depl.yaml
+        #kubectl get  deployments
+        #kubectl get pods  
+        #kubectl delete deployments plateforms-depl
+        #kubectl get services   

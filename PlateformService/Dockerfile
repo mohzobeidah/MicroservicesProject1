@@ -13,4 +13,6 @@ WORKDIR /App
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "PlateformService.dll"]
 
+# name must be lowercase
 # docker build -t mohzobeidah/plateformservice:1 .
+#docker push  mohzobeidah/plateformservice

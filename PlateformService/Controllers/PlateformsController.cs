@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using PlateformService.Data;
 using PlateformService.Dtos;
 using PlateformService.Models;
+using PlateformService.SyncDataServices.Http;
 
 namespace PlateformService.Controllers
 {
@@ -16,9 +17,11 @@ namespace PlateformService.Controllers
     {
         private readonly IPlateformRepo _plateformRepo;
         private readonly IMapper _mapper;
+        private readonly ICommandDataCleint _commandDataCleint;
 
-        public PlateformsController(IPlateformRepo plateformRepo ,IMapper mapper )
+        public PlateformsController(IPlateformRepo plateformRepo ,IMapper mapper  , ICommandDataCleint commandDataCleint)
         {
+            this._commandDataCleint = commandDataCleint;
             this._plateformRepo = plateformRepo;
             this._mapper = mapper;
         }
@@ -47,6 +50,15 @@ namespace PlateformService.Controllers
             _plateformRepo.SaveChanges();
             var returnObj= _mapper.Map<PlateformReadDtos>(res);
             Console.WriteLine(res.Id);
+            try
+            {
+                _commandDataCleint.SendPlateformToCommand(returnObj);
+            }
+            catch (System.Exception ex)
+            {
+                
+                Console.WriteLine($" error in send ing {ex.Message}");
+            }
             return CreatedAtRoute(nameof(GetPlateformById),new {id=res.Id},returnObj) ;
            
         }

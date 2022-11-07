@@ -1,0 +1,25 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: plateform-clusterip-serv
+spec:
+  type: ClusterIP
+  selector:
+    app: plateformservice
+  ports:
+  - name : plateformservice
+    protocol: TCP
+    port: 80
+    targetPort: 80
+
+
+
+
+
+        #kubectl version
+        #kubectl apply -f .\plateforms-depl.yaml
+        #kubectl get  deployments
+        #kubectl get pods  
+        #kubectl delete deployments plateforms-depl
+
